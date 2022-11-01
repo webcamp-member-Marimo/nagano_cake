@@ -9,13 +9,13 @@
   <%= f.label :introduction, "商品説明" %>
   <%= f.text_area :introduction %>
   <br>
-  ジャンル（プルダウン方式）
+  ジャンル
   <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択して下さい" %>
   <br>
   <%= f.label :price, "税抜価格" %>
   <%= f.text_field :price %>円
   <br>
-  販売ステータス（選択式）
+  販売ステータス
   <%= f.radio_button :is_active, :TRUE, checked: true %>
   <%= f.label :is_active, "販売中" %>
   <%= f.radio_button :is_active, :FALSE %>
