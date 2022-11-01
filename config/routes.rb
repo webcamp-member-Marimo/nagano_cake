@@ -17,10 +17,10 @@ Rails.application.routes.draw do
     patch 'customers/withdrawal' => 'customers#withdrawal'
     resources :items, only:[:show, :index]
     resources :cart_items, only:[:index, :update, :destroy, :create]
-    delete 'cart_items' => 'cart_items#all_destroy'
+    delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
     resources :orders, only:[:new, :create, :index, :show]
     post 'orders/check' => 'orders#check'
-    get 'orders/:id/complete' => 'orders#complete'
+    get 'orders/complete' => 'orders#complete'
     resources :delivery_addresses, only:[:index, :edit, :create, :update, :destroy]
   end
   
