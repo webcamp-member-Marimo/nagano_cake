@@ -1,1 +1,15 @@
-Topだよ
+<h1>Top</h1>
+ようこそ、ながのCAKEへ！<br>
+このサイトは、ケーキ販売のECサイトになります。<br>
+会員でない方も商品の閲覧はできますが、<br>
+購入には会員登録が必要になります。
+
+<p>新着商品</p>
+<% @new_items.each do |new_item| %>
+  <%= link_to item_path(new_item.id) do %> 
+    <%= image_tag new_item.get_image(100, 100) %>
+    <%= new_item.name %>
+    ￥<%= new_item.price.to_s(:delimited) %>
+  <% end %>
+<% end %>
+<%= link_to "全ての商品を見る >", items_path %>
