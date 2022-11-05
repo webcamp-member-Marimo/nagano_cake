@@ -8,8 +8,8 @@
 <% @new_items.each do |new_item| %>
   <%= link_to item_path(new_item.id) do %> 
     <%= image_tag new_item.get_image(100, 100) %>
-    <%= new_item.name %>
-    ￥<%= new_item.price.to_s(:delimited) %>
+    <p><%= new_item.name %></P>
+    <p>￥<%= new_item.price.to_s(:delimited) %></P>
   <% end %>
 <% end %>
 <%= link_to "全ての商品を見る >", items_path %>
