@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
-  
+
   scope module: :public do
     root to: "homes#top"
     get 'about' => 'homes#about'
@@ -16,14 +16,14 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe' => 'customers#unsubscribe'
     patch 'customers/withdrawal' => 'customers#withdrawal'
     resources :items, only:[:show, :index]
+    delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
     resources :cart_items, only:[:index, :update, :destroy, :create]
-    delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
     resources :orders, only:[:new, :create, :index, :show]
     post 'orders/check' => 'orders#check'
     get 'orders/complete' => 'orders#complete'
     resources :delivery_addresses, only:[:index, :edit, :create, :update, :destroy]
   end
-  
+
   namespace :admin do
     root to: "homes#top"
     resources :items, only:[:index, :new, :create, :show, :edit, :update]
