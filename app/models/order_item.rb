@@ -1,3 +1,9 @@
 class OrderItem < ApplicationRecord
-  belongs_to :order, dependent: :destroy
+  enum making_status: { unable: 0, waiting: 1, producing: 2, done: 3 }
+  belongs_to :order
+  belongs_to :item
+  
+  def subtotal
+    item.tax_price * amount
+  end
 end
