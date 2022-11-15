@@ -2,7 +2,7 @@
 <h3>ジャンル一覧・追加</h3>
 <%= form_with model: @genre, url: "/admin/genres", method: :post do |f| %>
   <%= f.label :name, "ジャンル名" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "ジャンル名" %>
   <%= f.submit '新規登録' %>
 <% end %>
 

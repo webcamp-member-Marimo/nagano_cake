@@ -4,16 +4,16 @@
   <%= f.file_field :image, accept: "image/*" %>
   <br>
   <%= f.label :name, "商品名" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "商品名" %>
   <br>
   <%= f.label :introduction, "商品説明" %>
-  <%= f.text_area :introduction %>
+  <%= f.text_area :introduction, placeholder: "ここに説明文を記述します" %>
   <br>
   ジャンル
   <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択して下さい" %>
   <br>
   <%= f.label :price, "税抜価格" %>
-  <%= f.text_field :price %>円
+  <%= f.text_field :price, placeholder: "1000" %>円
   <br>
   販売ステータス
   <%= f.radio_button :is_active, :TRUE, checked: true %>
