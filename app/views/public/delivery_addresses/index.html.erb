@@ -17,6 +17,7 @@
   <%= f.hidden_field :customer_id, :value => current_customer.id %>
   <%= f.submit "新規登録" %>
 <% end %>
+<% if @addresses.present? %>
 <table>
   <thead>
     <tr>
@@ -35,5 +36,8 @@
         <td><%= link_to "編集する", edit_delivery_address_path(address.id) %> <%= link_to "削除する", delivery_address_path(address.id), method: :delete %></td>
       </tr>
     <% end %>
+  <% else %>
+    <p>配送先が登録されていません</p>
+  <% end %>
   </tbody>
 </table>
