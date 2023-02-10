@@ -1,0 +1,12 @@
+<p>商品一覧(全<%= @items.count %>件)</p>
+<div class="d-flex flex-row w-100 flex-wrap">
+<% @items.each do |item| %>
+  <div class="d-flex flex-row m-5">
+  <%= link_to item_path(item.id) do %>
+    <%= image_tag item.get_image(100, 100) %>
+    <p><%= item.name %></p>
+    <p>￥<%= item.price.to_s(:delimited) %></P>
+  <% end %>
+  </div>
+<% end %>
+</div>
